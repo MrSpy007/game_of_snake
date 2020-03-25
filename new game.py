@@ -67,7 +67,7 @@ class App:
         x = 30
         y = 100
         while True:
-            mouse = pygame.mouse.get_pos()
+            mouse = pygame.mouse.get_pos() # get the position of mouse
             display.fill((14, 15, 34))
             self.message('Score = ' + str((self.snakelen - 1) * 5), HEIGHT // 8, WIDTH // 6, 30, (0, 255, 0))
             self.message("Welcome !", HEIGHT // 4, WIDTH // 4, 100, RED)
@@ -89,7 +89,7 @@ class App:
                             self.maybe_i_dont_know()
                             self.snakelen = 1
                             self.leadx = HEIGHT // 2
-                            self.leady == WIDTH // 2
+                            self.leady =WIDTH // 2
                             self.leadxchange = 0
                             self.leadychange = 0
                             main()
@@ -134,7 +134,7 @@ class App:
             if eachSegment == SnakeHead:
                 self.gameover()
 
-    def food_change(self):
+    def food_change(self):#change food after eating
         self.foodx = round(random.randrange(100, HEIGHT) // 30) * 30
         self.foody = round(random.randrange(100, WIDTH) // 10) * 10
 
@@ -189,7 +189,7 @@ def main():
                 elif event.key == K_DOWN or event.key == K_s:
                     game.leadychange = 10
                     game.leadxchange = 0
-                    pygame.transform.flip(head, True, True)
+                  #  pygame.transform.flip(head, True, True)
                     pygame.display.update()
                 elif event.key == K_LEFT or event.key == K_a:
                     game.leadxchange = -10
